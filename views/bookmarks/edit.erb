@@ -1,0 +1,10 @@
+<ul>
+  <li>
+    <h4><%= @bookmark.title %></h4>
+    <form action="/<%= @bookmark.id %>/edit" method="post">
+      <%= erb :'bookmarks/_form' %>
+
+      <button class='btn-success'>Update bookmark</button>
+    </form>
+  </li>
+</ul>

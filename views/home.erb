@@ -1,0 +1,23 @@
+
+<h2 class="section-heading">Your bookmarks</h2>
+<h3 class="section-subheading text-muted">The best sites on the web.</h3>
+<div class='flexbox'>
+<div class="row text-center">
+  <% @bookmarks.each do |bookmark| %>
+  <div class="col-md-4">
+    <h4 class="bookmark"><%= bookmark.title %></h4>
+    <p class="genre"><%= bookmark.genre %></p>
+    <a href="<%= bookmark.url %>"><%= bookmark.url %></a>
+    <p class="text-muted"><%= bookmark.description %></p>
+    <a class='edit' href="/<%= bookmark.id %>/edit">edit</a>
+    <form action="<%= bookmark.id %>/delete" method='post'>
+    <button class='delete'>delete</button>
+    </form>
+  </div>
+  <% end %>
+
+</div>
+
+</div>
+<a class='btn-lg' href="/new">Add a new bookmark</a>
+
